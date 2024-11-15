@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { Chip, Button, CircularProgress, Box, LinearProgress } from '@mui/material';
+import { Chip, Button, CircularProgress, LinearProgress } from '@mui/material';
 import { getTags, Tag } from './backend'
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
@@ -41,6 +41,19 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isTextFromUrl, setIsTextFromUrl] = useState<boolean>(false)
 
+  const onButtonClick = useCallback(() => {
+    if (isTagMode) {
+      setIsTagMode(false)
+      return
+    }
+    if (text === '') return
+    setIsLoading(true)
+    getTags(text).then(setTags).finally(() => {
+      setIsTagMode(true)
+      setIsLoading(false)
+    })
+  }, [isTagMode, text])
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const t = urlParams.get('text');
@@ -55,20 +68,7 @@ function App() {
       setIsTextFromUrl(false)
       onButtonClick()
     }
-  }, [text])
-
-  const onButtonClick = () => {
-    if (isTagMode) {
-      setIsTagMode(false)
-      return
-    }
-    if (text === '') return
-    setIsLoading(true)
-    getTags(text).then(setTags).finally(() => {
-      setIsTagMode(true)
-      setIsLoading(false)
-    })
-  }
+  }, [text, isTextFromUrl, onButtonClick])
 
   return (
     <div className="container mx-auto my-6 py-6">
@@ -98,12 +98,12 @@ function App() {
                   key={'tag-id-' + i}
                   data-processed={true}
                   style={{
-                    backgroundColor: tagsColors.find(t => t.code == tag[1])?.color || 'hsla(0, 0%, 80%, 0.5)'
+                    backgroundColor: tagsColors.find(t => t.code === tag[1])?.color || 'hsla(0, 0%, 80%, 0.5)'
                   }}
                 >
                   {tag[0]}
                   <div className='tooltip'>
-                    {tagsColors.find(t => t.code == tag[1])?.name}
+                    {tagsColors.find(t => t.code === tag[1])?.name}
                   </div>
                 </span>
               )}
