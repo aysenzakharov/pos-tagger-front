@@ -76,7 +76,7 @@ function App() {
       <br />
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-2">
-          <strong>text:</strong>
+          <strong>{isTagMode ? 'Tags' : 'Text'}:</strong>
           {isLoading ? <LinearProgress className='my-1' hidden={!isLoading} /> : <></>}
           <div>
             <TextareaAutosize
