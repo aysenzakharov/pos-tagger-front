@@ -104,16 +104,15 @@ export default function POSTagger() {
                 )}
             </div>
         </div>
-            <Button
-                disabled={isLoading}
-                className='py-'
-                variant="contained"
-                color="primary"
-                onClick={onButtonClick}
-                startIcon={isLoading ? <CircularProgress color='warning' size={'1em'} /> : (isTagMode ? <BorderColorIcon /> : <AutoFixHighIcon/>)}
-            >
-                {isTagMode ? 'Edit text' : 'Tag it'}
-            </Button>
+        <Button
+            disabled={isLoading}
+            variant="contained"
+            color="primary"
+            onClick={onButtonClick}
+            startIcon={isLoading ? <CircularProgress color='warning' size={'1em'} /> : (isTagMode ? <BorderColorIcon /> : <AutoFixHighIcon/>)}
+        >
+            {isTagMode ? 'Edit text' : 'Tag it'}
+        </Button>
         </>
     );
 }
