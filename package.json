@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && scp -r build/ vps@nsk-group.shop:/home/vps/pos-tagger-front/build"
+    "deploy": "./deploy.sh"
   },
   "eslintConfig": {
     "extends": [
