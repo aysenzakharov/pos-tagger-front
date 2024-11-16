@@ -7,23 +7,23 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 
 const tagsColors = [
-  { code: 'ADJ', color: 'hsla(30, 90%, 70%, 0.5)', name: 'adjective' },  // Красный
-  { code: 'ADP', color: 'hsla(120, 90%, 60%, 0.5)', name: 'adposition' },  // Ярко-зеленый
-  { code: 'ADV', color: 'hsla(160, 80%, 60%, 0.5)', name: 'adverb' },  // Зеленый
-  { code: 'AUX', color: 'hsla(210, 80%, 75%, 0.5)', name: 'auxiliary' },  // Голубой
-  { code: 'CCONJ', color: 'hsla(220, 90%, 50%, 0.5)', name: 'coordinating conjunction' },  // Яркий синий
-  { code: 'DET', color: 'hsla(300, 90%, 60%, 0.5)', name: 'determiner' },  // Пурпурный
-  { code: 'INTJ', color: 'hsla(10, 80%, 80%, 0.5)', name: 'interjection' },  // Оранжевый
-  { code: 'NOUN', color: 'hsla(60, 80%, 60%, 0.5)', name: 'noun' },  // Желтый
-  { code: 'NUM', color: 'hsla(100, 80%, 75%, 0.5)', name: 'numeral' },  // Светло-зеленый
-  { code: 'PART', color: 'hsla(170, 80%, 75%, 0.5)', name: 'particle' },  // Легкий зеленый
-  { code: 'PRON', color: 'hsla(220, 70%, 80%, 0.5)', name: 'pronoun' },  // Синий-зеленый
-  { code: 'PROPN', color: 'hsla(270, 90%, 50%, 0.5)', name: 'proper noun' },  // Фиолетовый
-  { code: 'PUNCT', color: 'hsla(320, 90%, 50%, 0.5)', name: 'punctuation' },  // Ярко-розовый
-  { code: 'SCONJ', color: 'hsla(350, 90%, 60%, 0.5)', name: 'subordinating conjunction' },  // Красно-фиолетовый
-  { code: 'SYM', color: 'hsla(30, 80%, 85%, 0.5)', name: 'symbol' },  // Яркий оранжевый
-  { code: 'VERB', color: 'hsla(240, 90%, 45%, 0.5)', name: 'verb' },  // Темно-синий
-  { code: 'X', color: 'hsla(130, 80%, 75%, 0.5)', name: 'other' }  // Зеленый
+  { code: 'ADJ', color: 'hsla(30, 90%, 70%, 0.5)', name: 'Adjective' },  // Красный
+  { code: 'ADP', color: 'hsla(120, 90%, 60%, 0.5)', name: 'Adposition' },  // Ярко-зеленый
+  { code: 'ADV', color: 'hsla(160, 80%, 60%, 0.5)', name: 'Adverb' },  // Зеленый
+  { code: 'AUX', color: 'hsla(210, 80%, 75%, 0.5)', name: 'Auxiliary' },  // Голубой
+  { code: 'CCONJ', color: 'hsla(220, 90%, 50%, 0.5)', name: 'Coordinating conjunction' },  // Яркий синий
+  { code: 'DET', color: 'hsla(300, 90%, 60%, 0.5)', name: 'Determiner' },  // Пурпурный
+  { code: 'INTJ', color: 'hsla(10, 80%, 80%, 0.5)', name: 'Interjection' },  // Оранжевый
+  { code: 'NOUN', color: 'hsla(60, 80%, 60%, 0.5)', name: 'Noun' },  // Желтый
+  { code: 'NUM', color: 'hsla(100, 80%, 75%, 0.5)', name: 'Numeral' },  // Светло-зеленый
+  { code: 'PART', color: 'hsla(170, 80%, 75%, 0.5)', name: 'Particle' },  // Легкий зеленый
+  { code: 'PRON', color: 'hsla(220, 70%, 80%, 0.5)', name: 'Pronoun' },  // Синий-зеленый
+  { code: 'PROPN', color: 'hsla(270, 90%, 50%, 0.5)', name: 'Proper noun' },  // Фиолетовый
+  { code: 'PUNCT', color: 'hsla(320, 90%, 50%, 0.5)', name: 'Punctuation' },  // Ярко-розовый
+  { code: 'SCONJ', color: 'hsla(350, 90%, 60%, 0.5)', name: 'Subordinating conjunction' },  // Красно-фиолетовый
+  { code: 'SYM', color: 'hsla(30, 80%, 85%, 0.5)', name: 'Symbol' },  // Яркий оранжевый
+  { code: 'VERB', color: 'hsla(240, 90%, 45%, 0.5)', name: 'Verb' },  // Темно-синий
+  { code: 'X', color: 'hsla(130, 80%, 75%, 0.5)', name: 'Other' }  // Зеленый
 ]
 
 const SAMPLE_TEXT = `
@@ -103,7 +103,7 @@ function App() {
                 >
                   {tag[0]}
                   <div className='tooltip text-center'>
-<p>{tagsColors.find(t => t.code === tag[1])?.name}</p>
+                    <p>{tagsColors.find(t => t.code === tag[1])?.name}</p>
                     <span>▼</span>
                   </div>
                 </span>
