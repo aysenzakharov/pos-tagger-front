@@ -102,8 +102,9 @@ function App() {
                   }}
                 >
                   {tag[0]}
-                  <div className='tooltip'>
-                    {tagsColors.find(t => t.code === tag[1])?.name}
+                  <div className='tooltip text-center'>
+<p>{tagsColors.find(t => t.code === tag[1])?.name}</p>
+                    <span>▼</span>
                   </div>
                 </span>
               )}
