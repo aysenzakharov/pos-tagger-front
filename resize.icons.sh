@@ -1,5 +1,3 @@
-rm -rf icons
-mkdir icons
 for size in 192 512; do
 	convert -background none -resize ${size}x${size} public/logo.svg public/logo${size}.png
 done
