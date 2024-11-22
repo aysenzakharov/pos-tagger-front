@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './POSTagger.css';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { Button, CircularProgress, LinearProgress } from '@mui/material';
+import { Button, Chip, CircularProgress, LinearProgress } from '@mui/material';
 import { getTags, Tag } from './backend'
-import BorderColorIcon from '@mui/icons-material/BorderColor';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 
 export const tagsColors = [
@@ -34,85 +33,91 @@ One morning, as he sat beneath an ancient oak, he noticed something unusual. At 
 
 export default function POSTagger() {
     const [text, setText] = useState<string>(SAMPLE_TEXT)
-    const [isTagMode, setIsTagMode] = useState<boolean>(false)
     const [tags, setTags] = useState<Tag[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [isTextFromUrl, setIsTextFromUrl] = useState<boolean>(false)
     
     const onButtonClick = useCallback(() => {
-        if (isTagMode) {
-            setIsTagMode(false)
-            return
-        }
         if (text === '') return
         setIsLoading(true)
         getTags(text).then(setTags).finally(() => {
-            setIsTagMode(true)
             setIsLoading(false)
         })
-    }, [isTagMode, text])
+    }, [text])
+
+    useEffect(onButtonClick, [text])
     
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const t = urlParams.get('text');
         if (t !== null) {
-            setIsTextFromUrl(true)
             setText(t)
+        } else {
+            onButtonClick()
         }
     }, [])
     
-    useEffect(() => {
-        if (isTextFromUrl) {
-            setIsTextFromUrl(false)
-            onButtonClick()
-        }
-    }, [text, isTextFromUrl, onButtonClick])
-    
     return (
         <>
-        <strong>{isTagMode ? 'Tags' : 'Text'}:</strong>
         {isLoading ? <LinearProgress className='my-1' hidden={!isLoading} /> : <></>}
-        <div className=''>
-            <TextareaAutosize
-                hidden={isTagMode}
-                className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
-                aria-label="empty textarea"
-                placeholder="Empty"
-                minRows={6}
-                value={text}
-                onChange={(e) => setText(e.target.value != null ? e.target.value : '')}
-            />
-            <div
-                hidden={!isTagMode}
-                className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
-            >
-                {tags.map((tag, i) => 
-                    tag[1] === 'SPACE' ? tag[0]:
-                    <span
-                        key={'tag-id-' + i}
-                        data-processed={true}
-                        style={{
-                            backgroundColor: tagsColors.find(t => t.code === tag[1])?.color || 'hsla(0, 0%, 80%, 0.5)'
-                        }}
+        <div className='grid grid-cols-1 lg:grid-cols-2  gap-2'>
+            <div className="">
+                <strong>Your text:</strong>
+                <TextareaAutosize
+                    className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
+                    aria-label="empty textarea"
+                    placeholder="Empty"
+                    minRows={6}
+                    value={text}
+                    onChange={(e) => setText(e.target.value != null ? e.target.value : '')}
+                />
+                <div className="flex justify-center">
+                    <Button
+                        disabled={isLoading}
+                        variant="contained"
+                        color="primary"
+                        onClick={onButtonClick}
+                        startIcon={isLoading ? <CircularProgress color='warning' size={'1em'} /> : (<AutoFixHighIcon/>)}
                     >
-                        {tag[0]}
-                        <div className='tooltip text-center'>
-                            <p>{tagsColors.find(t => t.code === tag[1])?.name}</p>
-                            <span>▼</span>
-                        </div>
-                    </span>
+                        {'Click me'}
+                    </Button>
+                </div>
+            </div>
+            <div className="">
+                <p>Result:</p>
+                <div
+                    className='bg-slate-100 whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
+                >
+                    {tags.map((tag, i) => 
+                        tag[1] === 'SPACE' ? tag[0]:
+                        <span
+                            key={'tag-id-' + i}
+                            data-processed={true}
+                            style={{
+                                backgroundColor: tagsColors.find(t => t.code === tag[1])?.color || 'hsla(0, 0%, 80%, 0.5)'
+                            }}
+                        >
+                            {tag[0]}
+                            <div className='tooltip text-center'>
+                                <p>{tagsColors.find(t => t.code === tag[1])?.name}</p>
+                                <span>▼</span>
+                            </div>
+                        </span>
+                    )}
+                </div>
+                <div className="">
+                {tagsColors.map(t =>
+                    <Chip
+                    key={'chip-' + t.code}
+                    className='m-1'
+                    size="medium"
+                    variant="filled"
+                    style={{backgroundColor: t.color}}
+                    label={t.name}
+                    />
                 )}
+                </div>
             </div>
         </div>
-        <Button
-            disabled={isLoading}
-            variant="contained"
-            color="primary"
-            onClick={onButtonClick}
-            startIcon={isLoading ? <CircularProgress color='warning' size={'1em'} /> : (isTagMode ? <BorderColorIcon /> : <AutoFixHighIcon/>)}
-        >
-            {isTagMode ? 'Edit text' : 'Tag it'}
-        </Button>
         </>
     );
 }
