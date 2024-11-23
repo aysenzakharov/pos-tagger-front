@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './POSTagger.css';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { Button, Chip, CircularProgress, LinearProgress } from '@mui/material';
-import { getTags, Tag } from './backend'
+import { getTags, LanguageEnum, Tag } from './backend'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import LanguageDropdown, { Language, languages } from './LanguageDropdown';
 
 export const tagsColors = [
     { code: 'ADJ', color: 'hsla(30, 90%, 70%, 0.5)', name: 'Adjective' },  // Красный
@@ -35,43 +36,71 @@ export default function POSTagger() {
     const [text, setText] = useState<string>(SAMPLE_TEXT)
     const [tags, setTags] = useState<Tag[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [selectedLang, setSelectedLang] = useState<Language>(languages[0])
+    const [isEnabledAutorefresh, setIsEnabledAutorefresh] = useState<boolean>(false)
     
     const onButtonClick = useCallback(() => {
         if (text === '') return
         setIsLoading(true)
-        getTags(text).then(setTags).finally(() => {
+        getTags(text, selectedLang.code).then(setTags).finally(() => {
             setIsLoading(false)
         })
-    }, [text])
+    }, [text, selectedLang.code])
 
-    useEffect(onButtonClick, [text])
+    useEffect(() => {
+        if (isEnabledAutorefresh) {
+            onButtonClick()
+        }
+    }, [text, selectedLang.code, isEnabledAutorefresh])
+
+    const parseLanguage = useCallback((unknownLang: string): Language | null => {
+        if (Object.values(LanguageEnum).includes(unknownLang as LanguageEnum)) {
+            let detectedLangEnum = unknownLang as LanguageEnum;
+            let detectedLang = languages.find(lng => lng.code === detectedLangEnum)
+            if (detectedLang) return detectedLang
+        }
+        return null
+    }, [languages])
     
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        const t = urlParams.get('text');
-        if (t !== null) {
-            setText(t)
-        } else {
-            onButtonClick()
+        const txt = urlParams.get('text')
+        const lng = urlParams.get('lang')
+        if (txt) {
+            setText(txt)
+            if (lng) {
+                let detectedLanguage = parseLanguage(lng)
+                if (detectedLanguage) setSelectedLang(detectedLanguage)
+            }
         }
+        setIsEnabledAutorefresh(true)
     }, [])
     
     return (
         <>
-        {isLoading ? <LinearProgress className='my-1' hidden={!isLoading} /> : <></>}
+        {isLoading && <LinearProgress className='my-1' hidden={!isLoading} />}
         <div className='grid grid-cols-1 lg:grid-cols-2  gap-2'>
             <div className="">
-                <strong>Your text:</strong>
+                <strong>Your text in {selectedLang.name}:</strong>
                 <TextareaAutosize
                     className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
                     aria-label="empty textarea"
                     placeholder="Empty"
                     minRows={6}
                     value={text}
-                    onChange={(e) => setText(e.target.value != null ? e.target.value : '')}
+                    onChange={(e) => {
+                        setText(e.target.value)
+                    }}
                 />
-                <div className="flex justify-center">
+                <div>
+                    <LanguageDropdown
+                        defaultLanguage={selectedLang}
+                        onSelectedNewLanguage={(newLang) => {
+                            setSelectedLang(newLang)
+                        }}
+                    />
                     <Button
+                        className="float-right"
                         disabled={isLoading}
                         variant="contained"
                         color="primary"
@@ -107,12 +136,12 @@ export default function POSTagger() {
                 <div className="">
                 {tagsColors.map(t =>
                     <Chip
-                    key={'chip-' + t.code}
-                    className='m-1'
-                    size="medium"
-                    variant="filled"
-                    style={{backgroundColor: t.color}}
-                    label={t.name}
+                        key={`chip-${t.code}`}
+                        className='m-1'
+                        size="medium"
+                        variant="filled"
+                        style={{backgroundColor: t.color}}
+                        label={t.name}
                     />
                 )}
                 </div>
