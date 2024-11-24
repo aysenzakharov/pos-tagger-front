@@ -29,7 +29,7 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
   detection: {
     order: ['querystring', 'cookie', 'localStorage', 'navigator'],
     caches: ['cookie'], // Сохраняем язык в cookie для последующих посещений
-    lookupQuerystring: 'lang', // Указываем, что параметр в URL — это 'lang'
+    lookupQuerystring: 'hl', // Указываем, что параметр в URL — это 'lang'
   },
   
 });
