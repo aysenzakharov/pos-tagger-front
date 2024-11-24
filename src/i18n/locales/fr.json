@@ -5,6 +5,8 @@
         "sample_text": "La jeune fille, curieuse et pleine d'énergie, qui n'avait jamais vu un oiseau aussi grand et coloré, courut rapidement à travers la rue animée, évitant plusieurs voitures et espérant arriver à temps pour sa réunion importante.",
         "text_title": "Votre texte en {{language}}",
         "tags_title": "Résultat",
+        "lang_warning_text": "Le texte saisi peut être en {{language}}",
+        "lang_warning_score": "La probabilité est de {{score}}%",
         "convert_button": "Convertir en étiquettes"
       },
       "tags": {

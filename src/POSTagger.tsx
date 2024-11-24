@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './POSTagger.css';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { Button, Chip, CircularProgress, LinearProgress } from '@mui/material';
-import { getTags, LanguageEnum, Tag } from './backend'
+import { LanguageEnum, Tag, textToTags } from './backend'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import LanguageDropdown, { Language, languages } from './LanguageDropdown';
 import { Trans, useTranslation } from 'react-i18next';
@@ -33,21 +33,36 @@ export default function POSTagger() {
     const [tags, setTags] = useState<Tag[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [selectedLang, setSelectedLang] = useState<Language>(languages[0])
-    const [isEnabledAutorefresh, setIsEnabledAutorefresh] = useState<boolean>(false)
+    const [isButtonEnabled, setIsButtonEnabled] = useState<boolean>(false)
+    const [langSimilarity, setLangSimilarity] = useState<{ lang: LanguageEnum, score: number }[]>([])
+    const [hasLangWarning, setLangWarning] = useState<boolean>(false)
     
     const onButtonClick = useCallback(() => {
         if (text === '') return
         setIsLoading(true)
-        getTags(text, selectedLang.code).then(setTags).finally(() => {
-            setIsLoading(false)
-        })
+        textToTags(text, selectedLang.code)
+            .then(data => {
+                setTags(data.tags)
+                setLangSimilarity(data.detectedLanguages)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }, [text, selectedLang.code])
 
     useEffect(() => {
-        if (isEnabledAutorefresh) {
+        setLangWarning(
+            langSimilarity.length > 0 &&
+            langSimilarity[0].lang != selectedLang.code &&
+            langSimilarity[0].score >= 0.9
+        )
+    }, [langSimilarity, selectedLang.code, text])
+
+    useEffect(() => {
+        if (isButtonEnabled) {
             onButtonClick()
         }
-    }, [text, selectedLang.code, isEnabledAutorefresh])
+    }, [text, selectedLang.code, isButtonEnabled])
 
     const parseLanguage = useCallback((unknownLang: string): Language | null => {
         if (Object.values(LanguageEnum).includes(unknownLang as LanguageEnum)) {
@@ -65,11 +80,11 @@ export default function POSTagger() {
         if (txt) {
             setText(txt)
             if (lng) {
-                let detectedLanguage = parseLanguage(lng)
-                if (detectedLanguage) setSelectedLang(detectedLanguage)
+                let parsedLang = parseLanguage(lng)
+                if (parsedLang) setSelectedLang(parsedLang)
             }
         }
-        setIsEnabledAutorefresh(true)
+        setIsButtonEnabled(true)
         // i18n.changeLanguage('en')
     }, [])
     
@@ -99,6 +114,14 @@ export default function POSTagger() {
                     }}
                 />
                 <div>
+                    <div hidden={!hasLangWarning} className="float-left bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                        <p className="font-bold">
+                            {langSimilarity.length > 0 && <Trans i18nKey={'form.lang_warning_text'} values={{ language: parseLanguage(langSimilarity[0].lang)?.name  }}/>}
+                        </p>
+                        <p>
+                            {langSimilarity.length > 0 && <Trans i18nKey={'form.lang_warning_score'} values={{ score: (langSimilarity[0].score * 100).toFixed(2) }}/>}
+                        </p>
+                    </div>
                     <Button
                         className="float-right"
                         disabled={isLoading}

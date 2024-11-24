@@ -5,6 +5,8 @@
         "sample_text": "那个好奇的年轻女孩，从未见过如此大的彩色鸟儿，她快速穿过繁忙的街道，避开了几辆汽车，心里希望能及时赶上公共汽车参加重要的会议。",
         "text_title": "您的文本在{{language}}",
         "tags_title": "结果",
+        "lang_warning_text": "输入的文本可能是{{language}}",
+        "lang_warning_score": "概率是{{score}}%",
         "convert_button": "转换为标签"
       },
       "tags": {

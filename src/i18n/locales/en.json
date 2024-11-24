@@ -5,6 +5,8 @@
       "sample_text": "The curious young girl, who had never seen such a large, colorful bird before, quickly ran across the busy street, avoiding a few cars and hoping to catch the bus in time for her important meeting.",
       "text_title": "Your text in {{language}}",
       "tags_title": "Result",
+      "lang_warning_text": "The entered text may be in {{language}}",
+      "lang_warning_score": "The probability is {{score}}%",
       "convert_button": "Convert to tags"
     },
     "tags": {
