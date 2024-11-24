@@ -1,0 +1,30 @@
+{
+    "translation": {
+      "title": "品詞識別器",
+      "form": {
+        "text_title": "あなたのテキストは{{language}}で",
+        "tags_title": "結果",
+        "convert_button": "タグに変換"
+      },
+      "tags": {
+        "Adjective": "形容詞",
+        "Adposition": "前置詞",
+        "Adverb": "副詞",
+        "Auxiliary": "助動詞",
+        "Coordinating conjunction": "等位接続詞",
+        "Determiner": "限定詞",
+        "Interjection": "感嘆詞",
+        "Noun": "名詞",
+        "Numeral": "数詞",
+        "Particle": "助詞",
+        "Pronoun": "代名詞",
+        "Proper noun": "固有名詞",
+        "Punctuation": "句読点",
+        "Subordinating conjunction": "従属接続詞",
+        "Symbol": "記号",
+        "Verb": "動詞",
+        "Other": "その他"
+      }
+    }
+  }
+  

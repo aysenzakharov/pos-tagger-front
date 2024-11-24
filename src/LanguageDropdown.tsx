@@ -39,9 +39,9 @@ export default function LanguageDropdown(props: { defaultLanguage: Language, onS
         className="p-2 inline-flex justify-center w-full rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
       >
         {/* Показываем флаг и название выбранного языка */}
-        <img src={props.defaultLanguage.flag} alt={props.defaultLanguage.name} className="w-6 h-4 mr-2" />
-        <span>{props.defaultLanguage.name}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <img src={props.defaultLanguage.flag} alt={props.defaultLanguage.name} className="w-6 h-4" />
+        {/* <span>{props.defaultLanguage.name}</span> */}
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>

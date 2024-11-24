@@ -1,0 +1,30 @@
+{
+    "translation": {
+      "title": "Identificador de partes del discurso",
+      "form": {
+        "text_title": "Tu texto en {{language}}",
+        "tags_title": "Resultado",
+        "convert_button": "Convertir a etiquetas"
+      },
+      "tags": {
+        "Adjective": "Adjetivo",
+        "Adposition": "Adposición",
+        "Adverb": "Adverbio",
+        "Auxiliary": "Auxiliar",
+        "Coordinating conjunction": "Conjunción coordinada",
+        "Determiner": "Determinante",
+        "Interjection": "Interjección",
+        "Noun": "Sustantivo",
+        "Numeral": "Numeral",
+        "Particle": "Partícula",
+        "Pronoun": "Pronombre",
+        "Proper noun": "Sustantivo propio",
+        "Punctuation": "Puntuación",
+        "Subordinating conjunction": "Conjunción subordinada",
+        "Symbol": "Símbolo",
+        "Verb": "Verbo",
+        "Other": "Otro"
+      }
+    }
+  }
+  

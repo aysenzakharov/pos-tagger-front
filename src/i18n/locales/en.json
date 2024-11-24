@@ -1,0 +1,29 @@
+{
+  "translation": {
+    "title": "Part of Speech Identifier",
+    "form": {
+      "text_title": "Your text in {{language}}",
+      "tags_title": "Result",
+      "convert_button": "Convert to tags"
+    },
+    "tags": {
+      "Adjective": "Adjective",
+      "Adposition": "Adposition",
+      "Adverb": "Adverb",
+      "Auxiliary": "Auxiliary",
+      "Coordinating conjunction": "Coordinating conjunction",
+      "Determiner": "Determiner",
+      "Interjection": "Interjection",
+      "Noun": "Noun",
+      "Numeral": "Numeral",
+      "Particle": "Particle",
+      "Pronoun": "Pronoun",
+      "Proper noun": "Proper noun",
+      "Punctuation": "Punctuation",
+      "Subordinating conjunction": "Subordinating conjunction",
+      "Symbol": "Symbol",
+      "Verb": "Verb",
+      "Other": "Other"
+    }
+  }
+}

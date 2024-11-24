@@ -1,0 +1,29 @@
+{
+    "translation": {
+      "title": "词性标注器",
+      "form": {
+        "text_title": "您的文本在{{language}}",
+        "tags_title": "结果",
+        "convert_button": "转换为标签"
+      },
+      "tags": {
+        "Adjective": "形容词",
+        "Adposition": "介词",
+        "Adverb": "副词",
+        "Auxiliary": "助动词",
+        "Coordinating conjunction": "并列连词",
+        "Determiner": "限定词",
+        "Interjection": "感叹词",
+        "Noun": "名词",
+        "Numeral": "数词",
+        "Particle": "助词",
+        "Pronoun": "代词",
+        "Proper noun": "专有名词",
+        "Punctuation": "标点符号",
+        "Subordinating conjunction": "从属连词",
+        "Symbol": "符号",
+        "Verb": "动词",
+        "Other": "其他"
+      }
+    }
+  }  

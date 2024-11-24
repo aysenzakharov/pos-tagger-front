@@ -1,0 +1,30 @@
+{
+    "translation": {
+      "title": "Wortarten Identifikator",
+      "form": {
+        "text_title": "Ihr Text in {{language}}",
+        "tags_title": "Ergebnis",
+        "convert_button": "In Tags umwandeln"
+      },
+      "tags": {
+        "Adjective": "Adjektiv",
+        "Adposition": "Präposition",
+        "Adverb": "Adverb",
+        "Auxiliary": "Hilfsverb",
+        "Coordinating conjunction": "Koordinierende Konjunktion",
+        "Determiner": "Determiner",
+        "Interjection": "Interjektion",
+        "Noun": "Nomen",
+        "Numeral": "Numerale",
+        "Particle": "Partikel",
+        "Pronoun": "Pronomen",
+        "Proper noun": "Eigenname",
+        "Punctuation": "Interpunktion",
+        "Subordinating conjunction": "Subordinierende Konjunktion",
+        "Symbol": "Symbol",
+        "Verb": "Verb",
+        "Other": "Andere"
+      }
+    }
+  }
+  

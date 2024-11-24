@@ -1,0 +1,29 @@
+{
+  "translation": {
+    "title": "Определитель частей речи",
+    "form": {
+      "text_title": "Ваш текст на языке {{language}}",
+      "tags_title": "Результат",
+      "convert_button": "Конвертировать в теги"
+    },
+    "tags": {
+      "Adjective": "Прилагательное",
+      "Adposition": "Предлог",
+      "Adverb": "Наречие",
+      "Auxiliary": "Вспомогательное",
+      "Coordinating conjunction": "Союз",
+      "Determiner": "Артикль",
+      "Interjection": "Восклицание",
+      "Noun": "Существительное",
+      "Numeral": "Числительное",
+      "Particle": "Частица",
+      "Pronoun": "Местоимение",
+      "Proper noun": "Собственное имя",
+      "Punctuation": "Пунктуация",
+      "Subordinating conjunction": "Подчинительный союз",
+      "Symbol": "Символ",
+      "Verb": "Глагол",
+      "Other": "Прочее"
+    }
+  }
+}

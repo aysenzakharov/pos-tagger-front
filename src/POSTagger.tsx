@@ -5,8 +5,9 @@ import { Button, Chip, CircularProgress, LinearProgress } from '@mui/material';
 import { getTags, LanguageEnum, Tag } from './backend'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import LanguageDropdown, { Language, languages } from './LanguageDropdown';
+import { Trans, useTranslation } from 'react-i18next';
 
-export const tagsColors = [
+const tagsColors = [
     { code: 'ADJ', color: 'hsla(30, 90%, 70%, 0.5)', name: 'Adjective' },  // Красный
     { code: 'ADP', color: 'hsla(120, 90%, 60%, 0.5)', name: 'Adposition' },  // Ярко-зеленый
     { code: 'ADV', color: 'hsla(160, 80%, 60%, 0.5)', name: 'Adverb' },  // Зеленый
@@ -33,6 +34,7 @@ Finn dreamed of adventure beyond the village, of discovering lands unknown and m
 One morning, as he sat beneath an ancient oak, he noticed something unusual. At the base of the tree lay a small stone with a curious symbol etched into its surface. It seemed to glow faintly in the dawn light, sparking a mystery that Finn couldn’t resist exploring.`
 
 export default function POSTagger() {
+    const { t, i18n } = useTranslation();  // Получаем доступ к переводам через useTranslation
     const [text, setText] = useState<string>(SAMPLE_TEXT)
     const [tags, setTags] = useState<Tag[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -74,6 +76,7 @@ export default function POSTagger() {
             }
         }
         setIsEnabledAutorefresh(true)
+        // i18n.changeLanguage('en')
     }, [])
     
     return (
@@ -81,7 +84,16 @@ export default function POSTagger() {
         {isLoading && <LinearProgress className='my-1' hidden={!isLoading} />}
         <div className='grid grid-cols-1 lg:grid-cols-2  gap-2'>
             <div className="">
-                <strong>Your text in {selectedLang.name}:</strong>
+                <strong><Trans i18nKey={'form.text_title'} values={{ language: selectedLang.name }}/></strong>
+                <span className='mx-2'>
+                    <LanguageDropdown
+                        defaultLanguage={selectedLang}
+                        onSelectedNewLanguage={(newLang) => {
+                            setSelectedLang(newLang)
+                        }}
+                    />
+                </span>
+                :
                 <TextareaAutosize
                     className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
                     aria-label="empty textarea"
@@ -93,12 +105,6 @@ export default function POSTagger() {
                     }}
                 />
                 <div>
-                    <LanguageDropdown
-                        defaultLanguage={selectedLang}
-                        onSelectedNewLanguage={(newLang) => {
-                            setSelectedLang(newLang)
-                        }}
-                    />
                     <Button
                         className="float-right"
                         disabled={isLoading}
@@ -107,12 +113,12 @@ export default function POSTagger() {
                         onClick={onButtonClick}
                         startIcon={isLoading ? <CircularProgress color='warning' size={'1em'} /> : (<AutoFixHighIcon/>)}
                     >
-                        {'Click me'}
+                        {t('form.convert_button')}
                     </Button>
                 </div>
             </div>
             <div className="">
-                <p>Result:</p>
+                <p>{t('form.tags_title')}:</p>
                 <div
                     className='bg-slate-100 whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
                 >
@@ -134,14 +140,14 @@ export default function POSTagger() {
                     )}
                 </div>
                 <div className="">
-                {tagsColors.map(t =>
+                {tagsColors.map(tagsColor =>
                     <Chip
-                        key={`chip-${t.code}`}
+                        key={`chip-${tagsColor.code}`}
                         className='m-1'
                         size="medium"
                         variant="filled"
-                        style={{backgroundColor: t.color}}
-                        label={t.name}
+                        style={{backgroundColor: tagsColor.color}}
+                        label={t(`tags.${tagsColor.name}`)}
                     />
                 )}
                 </div>

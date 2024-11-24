@@ -1,0 +1,30 @@
+{
+    "translation": {
+      "title": "Identificateur de partie du discours",
+      "form": {
+        "text_title": "Votre texte en {{language}}",
+        "tags_title": "Résultat",
+        "convert_button": "Convertir en étiquettes"
+      },
+      "tags": {
+        "Adjective": "Adjectif",
+        "Adposition": "Préposition",
+        "Adverb": "Adverbe",
+        "Auxiliary": "Verbe auxiliaire",
+        "Coordinating conjunction": "Conjonction de coordination",
+        "Determiner": "Déterminant",
+        "Interjection": "Interjection",
+        "Noun": "Nom",
+        "Numeral": "Numéral",
+        "Particle": "Particule",
+        "Pronoun": "Pronom",
+        "Proper noun": "Nom propre",
+        "Punctuation": "Ponctuation",
+        "Subordinating conjunction": "Conjonction de subordination",
+        "Symbol": "Symbole",
+        "Verb": "Verbe",
+        "Other": "Autre"
+      }
+    }
+  }
+  
