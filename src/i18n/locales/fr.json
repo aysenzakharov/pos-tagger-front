@@ -2,6 +2,7 @@
     "translation": {
       "title": "Identificateur de partie du discours",
       "form": {
+        "sample_text": "La jeune fille, curieuse et pleine d'énergie, qui n'avait jamais vu un oiseau aussi grand et coloré, courut rapidement à travers la rue animée, évitant plusieurs voitures et espérant arriver à temps pour sa réunion importante.",
         "text_title": "Votre texte en {{language}}",
         "tags_title": "Résultat",
         "convert_button": "Convertir en étiquettes"

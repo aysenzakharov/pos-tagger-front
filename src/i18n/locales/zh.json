@@ -2,6 +2,7 @@
     "translation": {
       "title": "词性标注器",
       "form": {
+        "sample_text": "那个好奇的年轻女孩，从未见过如此大的彩色鸟儿，她快速穿过繁忙的街道，避开了几辆汽车，心里希望能及时赶上公共汽车参加重要的会议。",
         "text_title": "您的文本在{{language}}",
         "tags_title": "结果",
         "convert_button": "转换为标签"

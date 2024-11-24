@@ -2,6 +2,7 @@
   "translation": {
     "title": "Part of Speech Identifier",
     "form": {
+      "sample_text": "The curious young girl, who had never seen such a large, colorful bird before, quickly ran across the busy street, avoiding a few cars and hoping to catch the bus in time for her important meeting.",
       "text_title": "Your text in {{language}}",
       "tags_title": "Result",
       "convert_button": "Convert to tags"

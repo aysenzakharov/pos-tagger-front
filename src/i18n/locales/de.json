@@ -2,6 +2,7 @@
     "translation": {
       "title": "Wortarten Identifikator",
       "form": {
+        "sample_text": "Das neugierige junge Mädchen, das noch nie so einen großen, bunten Vogel gesehen hatte, rannte schnell über die belebte Straße, wich einigen Autos aus und hoffte, rechtzeitig den Bus zu erwischen, um zu ihrer wichtigen Besprechung zu kommen.",
         "text_title": "Ihr Text in {{language}}",
         "tags_title": "Ergebnis",
         "convert_button": "In Tags umwandeln"

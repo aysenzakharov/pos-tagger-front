@@ -27,15 +27,9 @@ const tagsColors = [
     { code: 'X', color: 'hsla(130, 80%, 75%, 0.5)', name: 'Other' }  // Зеленый
 ]
 
-const SAMPLE_TEXT = `Once upon a time, in a quiet village nestled between misty mountains, there lived a boy named Finn. Every morning, he would climb to the top of the tallest hill to watch the sun rise over the valley, painting the world in shades of gold.
-
-Finn dreamed of adventure beyond the village, of discovering lands unknown and meeting creatures of legend. The villagers often laughed, saying he had his head in the clouds, but Finn’s curiosity only grew with each passing day.
-
-One morning, as he sat beneath an ancient oak, he noticed something unusual. At the base of the tree lay a small stone with a curious symbol etched into its surface. It seemed to glow faintly in the dawn light, sparking a mystery that Finn couldn’t resist exploring.`
-
 export default function POSTagger() {
     const { t, i18n } = useTranslation();  // Получаем доступ к переводам через useTranslation
-    const [text, setText] = useState<string>(SAMPLE_TEXT)
+    const [text, setText] = useState<string>(t('form.sample_text'))
     const [tags, setTags] = useState<Tag[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [selectedLang, setSelectedLang] = useState<Language>(languages[0])

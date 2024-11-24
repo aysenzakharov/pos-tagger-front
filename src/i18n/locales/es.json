@@ -2,6 +2,7 @@
     "translation": {
       "title": "Identificador de partes del discurso",
       "form": {
+        "sample_text": "La joven, curiosa y llena de energía, que nunca antes había visto un pájaro tan grande y colorido, corrió rápidamente por la calle concurrida, esquivando varios coches y esperando llegar a tiempo para su reunión importante.",
         "text_title": "Tu texto en {{language}}",
         "tags_title": "Resultado",
         "convert_button": "Convertir a etiquetas"
