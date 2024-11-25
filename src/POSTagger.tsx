@@ -79,11 +79,9 @@ export default function POSTagger() {
         const lng = urlParams.get('lang')
         if (txt) {
             setText(txt)
-            if (lng) {
-                let parsedLang = parseLanguage(lng)
-                if (parsedLang) setSelectedLang(parsedLang)
-            }
         }
+        let parsedLang = parseLanguage(lng ? lng : i18n.language)
+        if (parsedLang) setSelectedLang(parsedLang)
         setIsButtonEnabled(true)
         // i18n.changeLanguage('en')
     }, [])
