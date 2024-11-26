@@ -53,7 +53,7 @@ export default function POSTagger() {
     useEffect(() => {
         setLangWarning(
             langSimilarity.length > 0 &&
-            langSimilarity[0].lang != selectedLang.code &&
+            langSimilarity[0].lang !== selectedLang.code &&
             langSimilarity[0].score >= 0.9
         )
     }, [langSimilarity, selectedLang.code, text])
@@ -64,7 +64,7 @@ export default function POSTagger() {
         }
     }, [text, selectedLang.code, isButtonEnabled])
 
-    const parseLanguage = useCallback((unknownLang: string): Language | null => {
+    const getLanguageByISO = useCallback((unknownLang: string): Language | null => {
         if (Object.values(LanguageEnum).includes(unknownLang as LanguageEnum)) {
             let detectedLangEnum = unknownLang as LanguageEnum;
             let detectedLang = languages.find(lng => lng.code === detectedLangEnum)
@@ -80,8 +80,8 @@ export default function POSTagger() {
         if (txt) {
             setText(txt)
         }
-        let parsedLang = parseLanguage(lng ? lng : i18n.language)
-        if (parsedLang) setSelectedLang(parsedLang)
+        let language = getLanguageByISO(lng ? lng : i18n.language)
+        if (language) setSelectedLang(language)
         setIsButtonEnabled(true)
         // i18n.changeLanguage('en')
     }, [])
@@ -114,7 +114,7 @@ export default function POSTagger() {
                 <div>
                     <div hidden={!hasLangWarning} className="float-left bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
                         <p className="font-bold">
-                            {langSimilarity.length > 0 && <Trans i18nKey={'form.lang_warning_text'} values={{ language: parseLanguage(langSimilarity[0].lang)?.name  }}/>}
+                            {langSimilarity.length > 0 && <Trans i18nKey={'form.lang_warning_text'} values={{ language: getLanguageByISO(langSimilarity[0].lang)?.name  }}/>}
                         </p>
                         <p>
                             {langSimilarity.length > 0 && <Trans i18nKey={'form.lang_warning_score'} values={{ score: (langSimilarity[0].score * 100).toFixed(2) }}/>}

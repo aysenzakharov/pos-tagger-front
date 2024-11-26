@@ -1,33 +1,40 @@
 {
-    "translation": {
-      "title": "Identificador de partes del discurso",
-      "form": {
-        "sample_text": "La joven, curiosa y llena de energía, que nunca antes había visto un pájaro tan grande y colorido, corrió rápidamente por la calle concurrida, esquivando varios coches y esperando llegar a tiempo para su reunión importante.",
-        "text_title": "Tu texto en {{language}}",
-        "tags_title": "Resultado",
-        "lang_warning_text": "El texto ingresado puede estar en {{language}}",
-        "lang_warning_score": "La probabilidad es {{score}}%",
-        "convert_button": "Convertir a etiquetas"
-      },
-      "tags": {
-        "Adjective": "Adjetivo",
-        "Adposition": "Adposición",
-        "Adverb": "Adverbio",
-        "Auxiliary": "Auxiliar",
-        "Coordinating conjunction": "Conjunción coordinada",
-        "Determiner": "Determinante",
-        "Interjection": "Interjección",
-        "Noun": "Sustantivo",
-        "Numeral": "Numeral",
-        "Particle": "Partícula",
-        "Pronoun": "Pronombre",
-        "Proper noun": "Sustantivo propio",
-        "Punctuation": "Puntuación",
-        "Subordinating conjunction": "Conjunción subordinada",
-        "Symbol": "Símbolo",
-        "Verb": "Verbo",
-        "Other": "Otro"
+  "translation": {
+    "title": "Identificador de partes del discurso",
+    "form": {
+      "sample_text": "La joven, curiosa y llena de energía, que nunca antes había visto un pájaro tan grande y colorido, corrió rápidamente por la calle concurrida, esquivando varios coches y esperando llegar a tiempo para su reunión importante.",
+      "text_title": "Tu texto en {{language}}",
+      "tags_title": "Resultado",
+      "lang_warning_text": "El texto ingresado puede estar en {{language}}",
+      "lang_warning_score": "La probabilidad es {{score}}%",
+      "convert_button": "Convertir a etiquetas"
+    },
+    "tags": {
+      "Adjective": "Adjetivo",
+      "Adposition": "Adposición",
+      "Adverb": "Adverbio",
+      "Auxiliary": "Auxiliar",
+      "Coordinating conjunction": "Conjunción coordinada",
+      "Determiner": "Determinante",
+      "Interjection": "Interjección",
+      "Noun": "Sustantivo",
+      "Numeral": "Numeral",
+      "Particle": "Partícula",
+      "Pronoun": "Pronombre",
+      "Proper noun": "Sustantivo propio",
+      "Punctuation": "Puntuación",
+      "Subordinating conjunction": "Conjunción subordinada",
+      "Symbol": "Símbolo",
+      "Verb": "Verbo",
+      "Other": "Otro"
+    },
+    "welcome": {
+      "title_congratulation": "¡Felicidades, la extensión está instalada!",
+      "open_button": "Abrir la extensión",
+      "context_menu": {
+        "instruction": "Ahora puedes usar la extensión desde el menú contextual. Para analizar las partes del habla en el texto, selecciona una parte, haz clic derecho y elige la opción {{context_menu_item}}.",
+        "button_title": "Identificador de partes del habla"
       }
     }
   }
-  
+}

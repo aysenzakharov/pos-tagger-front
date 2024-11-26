@@ -1,33 +1,40 @@
 {
-    "translation": {
-      "title": "Wortarten Identifikator",
-      "form": {
-        "sample_text": "Das neugierige junge Mädchen, das noch nie so einen großen, bunten Vogel gesehen hatte, rannte schnell über die belebte Straße, wich einigen Autos aus und hoffte, rechtzeitig den Bus zu erwischen, um zu ihrer wichtigen Besprechung zu kommen.",
-        "text_title": "Ihr Text in {{language}}",
-        "tags_title": "Ergebnis",
-        "lang_warning_text": "Der eingegebene Text könnte in {{language}} sein",
-        "lang_warning_score": "Die Wahrscheinlichkeit beträgt {{score}}%",
-        "convert_button": "In Tags umwandeln"
-      },
-      "tags": {
-        "Adjective": "Adjektiv",
-        "Adposition": "Präposition",
-        "Adverb": "Adverb",
-        "Auxiliary": "Hilfsverb",
-        "Coordinating conjunction": "Koordinierende Konjunktion",
-        "Determiner": "Determiner",
-        "Interjection": "Interjektion",
-        "Noun": "Nomen",
-        "Numeral": "Numerale",
-        "Particle": "Partikel",
-        "Pronoun": "Pronomen",
-        "Proper noun": "Eigenname",
-        "Punctuation": "Interpunktion",
-        "Subordinating conjunction": "Subordinierende Konjunktion",
-        "Symbol": "Symbol",
-        "Verb": "Verb",
-        "Other": "Andere"
+  "translation": {
+    "title": "Wortarten Identifikator",
+    "form": {
+      "sample_text": "Das neugierige junge Mädchen, das noch nie so einen großen, bunten Vogel gesehen hatte, rannte schnell über die belebte Straße, wich einigen Autos aus und hoffte, rechtzeitig den Bus zu erwischen, um zu ihrer wichtigen Besprechung zu kommen.",
+      "text_title": "Ihr Text in {{language}}",
+      "tags_title": "Ergebnis",
+      "lang_warning_text": "Der eingegebene Text könnte in {{language}} sein",
+      "lang_warning_score": "Die Wahrscheinlichkeit beträgt {{score}}%",
+      "convert_button": "In Tags umwandeln"
+    },
+    "tags": {
+      "Adjective": "Adjektiv",
+      "Adposition": "Präposition",
+      "Adverb": "Adverb",
+      "Auxiliary": "Hilfsverb",
+      "Coordinating conjunction": "Koordinierende Konjunktion",
+      "Determiner": "Determiner",
+      "Interjection": "Interjektion",
+      "Noun": "Nomen",
+      "Numeral": "Numerale",
+      "Particle": "Partikel",
+      "Pronoun": "Pronomen",
+      "Proper noun": "Eigenname",
+      "Punctuation": "Interpunktion",
+      "Subordinating conjunction": "Subordinierende Konjunktion",
+      "Symbol": "Symbol",
+      "Verb": "Verb",
+      "Other": "Andere"
+    },
+    "welcome": {
+      "title_congratulation": "Herzlichen Glückwunsch, die Erweiterung ist installiert!",
+      "open_button": "Erweiterung öffnen",
+      "context_menu": {
+        "instruction": "Nun kannst du die Erweiterung über das Kontextmenü verwenden. Markiere einen Textabschnitt, klicke mit der rechten Maustaste und wähle die Option {{context_menu_item}} aus.",
+        "button_title": "Wortart-Identifikator"
       }
     }
   }
-  
+}

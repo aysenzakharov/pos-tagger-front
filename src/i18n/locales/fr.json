@@ -1,33 +1,41 @@
 {
-    "translation": {
-      "title": "Identificateur de partie du discours",
-      "form": {
-        "sample_text": "La jeune fille, curieuse et pleine d'énergie, qui n'avait jamais vu un oiseau aussi grand et coloré, courut rapidement à travers la rue animée, évitant plusieurs voitures et espérant arriver à temps pour sa réunion importante.",
-        "text_title": "Votre texte en {{language}}",
-        "tags_title": "Résultat",
-        "lang_warning_text": "Le texte saisi peut être en {{language}}",
-        "lang_warning_score": "La probabilité est de {{score}}%",
-        "convert_button": "Convertir en étiquettes"
-      },
-      "tags": {
-        "Adjective": "Adjectif",
-        "Adposition": "Préposition",
-        "Adverb": "Adverbe",
-        "Auxiliary": "Verbe auxiliaire",
-        "Coordinating conjunction": "Conjonction de coordination",
-        "Determiner": "Déterminant",
-        "Interjection": "Interjection",
-        "Noun": "Nom",
-        "Numeral": "Numéral",
-        "Particle": "Particule",
-        "Pronoun": "Pronom",
-        "Proper noun": "Nom propre",
-        "Punctuation": "Ponctuation",
-        "Subordinating conjunction": "Conjonction de subordination",
-        "Symbol": "Symbole",
-        "Verb": "Verbe",
-        "Other": "Autre"
+  "translation": {
+    "title": "Identificateur de partie du discours",
+    "form": {
+      "sample_text": "La jeune fille, curieuse et pleine d'énergie, qui n'avait jamais vu un oiseau aussi grand et coloré, courut rapidement à travers la rue animée, évitant plusieurs voitures et espérant arriver à temps pour sa réunion importante.",
+      "text_title": "Votre texte en {{language}}",
+      "tags_title": "Résultat",
+      "lang_warning_text": "Le texte saisi peut être en {{language}}",
+      "lang_warning_score": "La probabilité est de {{score}}%",
+      "convert_button": "Convertir en étiquettes"
+    },
+    "tags": {
+      "Adjective": "Adjectif",
+      "Adposition": "Préposition",
+      "Adverb": "Adverbe",
+      "Auxiliary": "Verbe auxiliaire",
+      "Coordinating conjunction": "Conjonction de coordination",
+      "Determiner": "Déterminant",
+      "Interjection": "Interjection",
+      "Noun": "Nom",
+      "Numeral": "Numéral",
+      "Particle": "Particule",
+      "Pronoun": "Pronom",
+      "Proper noun": "Nom propre",
+      "Punctuation": "Ponctuation",
+      "Subordinating conjunction": "Conjonction de subordination",
+      "Symbol": "Symbole",
+      "Verb": "Verbe",
+      "Other": "Autre"
+    },
+    "welcome": {
+      "title_congratulation": "Félicitations, l'extension est installée !",
+      "open_button": "Ouvrir l'extension",
+      "context_menu": {
+        "instruction": "Vous pouvez maintenant utiliser l'extension depuis le menu contextuel. Pour analyser les parties du discours dans le texte, sélectionnez une portion, faites un clic droit et choisissez l'option {{context_menu_item}}.",
+        "button_title": "Identificateur de parties du discours"
       }
     }
   }
+}
   

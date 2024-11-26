@@ -1,33 +1,41 @@
 {
-    "translation": {
-      "title": "品詞識別器",
-      "form": {
-        "sample_text": "好奇心旺盛な若い女の子は、これまで見たことのないほど大きくてカラフルな鳥を見た後、混雑した通りを急いで走り、いくつかの車を避けながら、重要な会議に間に合うようにバスに乗れることを願っていました。",
-        "text_title": "あなたのテキストは{{language}}で",
-        "tags_title": "結果",
-        "lang_warning_text": "入力されたテキストは{{language}}かもしれません",
-        "lang_warning_score": "確率は{{score}}%です",
-        "convert_button": "タグに変換"
-      },
-      "tags": {
-        "Adjective": "形容詞",
-        "Adposition": "前置詞",
-        "Adverb": "副詞",
-        "Auxiliary": "助動詞",
-        "Coordinating conjunction": "等位接続詞",
-        "Determiner": "限定詞",
-        "Interjection": "感嘆詞",
-        "Noun": "名詞",
-        "Numeral": "数詞",
-        "Particle": "助詞",
-        "Pronoun": "代名詞",
-        "Proper noun": "固有名詞",
-        "Punctuation": "句読点",
-        "Subordinating conjunction": "従属接続詞",
-        "Symbol": "記号",
-        "Verb": "動詞",
-        "Other": "その他"
+  "translation": {
+    "title": "品詞識別器",
+    "form": {
+      "sample_text": "好奇心旺盛な若い女の子は、これまで見たことのないほど大きくてカラフルな鳥を見た後、混雑した通りを急いで走り、いくつかの車を避けながら、重要な会議に間に合うようにバスに乗れることを願っていました。",
+      "text_title": "あなたのテキストは{{language}}で",
+      "tags_title": "結果",
+      "lang_warning_text": "入力されたテキストは{{language}}かもしれません",
+      "lang_warning_score": "確率は{{score}}%です",
+      "convert_button": "タグに変換"
+    },
+    "tags": {
+      "Adjective": "形容詞",
+      "Adposition": "前置詞",
+      "Adverb": "副詞",
+      "Auxiliary": "助動詞",
+      "Coordinating conjunction": "等位接続詞",
+      "Determiner": "限定詞",
+      "Interjection": "感嘆詞",
+      "Noun": "名詞",
+      "Numeral": "数詞",
+      "Particle": "助詞",
+      "Pronoun": "代名詞",
+      "Proper noun": "固有名詞",
+      "Punctuation": "句読点",
+      "Subordinating conjunction": "従属接続詞",
+      "Symbol": "記号",
+      "Verb": "動詞",
+      "Other": "その他"
+    },
+    "welcome": {
+      "title_congratulation": "おめでとうございます、拡張機能がインストールされました！",
+      "open_button": "拡張機能を開く",
+      "context_menu": {
+        "instruction": "これでコンテキストメニューから拡張機能を使うことができます。テキストを選択し、右クリックして{{context_menu_item}}オプションを選んで、品詞を分析しましょう。",
+        "button_title": "品詞識別ツール"
       }
     }
   }
+}
   

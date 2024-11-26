@@ -27,6 +27,14 @@
       "Symbol": "Symbol",
       "Verb": "Verb",
       "Other": "Other"
+    },
+    "welcome": {
+      "title_congratulation": "Congratulations, the extension is installed!",
+      "open_button": "Open the Extension",
+      "context_menu": {
+        "instruction": "You can now use the extension from the context menu. To analyze parts of speech in the text, highlight a portion, right-click, and select the {{context_menu_item}} option.",
+        "button_title": "Part of Speech Identifier"
+      }
     }
   }
 }
