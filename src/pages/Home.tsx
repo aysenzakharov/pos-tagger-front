@@ -5,7 +5,7 @@ function Home() {
   const { t } = useTranslation()
   return (
     <div className="container mx-auto my-6 py-6 px-1">
-      <h1>{t('title')}</h1>
+      <h1 className='text-lg'>{t('title')}</h1>
       <br />
       <POSTagger/>
     </div>

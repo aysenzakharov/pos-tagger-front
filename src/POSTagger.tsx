@@ -102,7 +102,7 @@ export default function POSTagger() {
                 </span>
                 :
                 <TextareaAutosize
-                    className='whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
+                    className={`whitespace-pre-wrap w-full my-2 ${text.length < 100 ? 'text-2xl' : 'text-lg'} font-normal font-sans leading-normal p-3 rounded-xl rounded-br-none shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border`}
                     aria-label="empty textarea"
                     placeholder="Empty"
                     minRows={6}
@@ -135,7 +135,7 @@ export default function POSTagger() {
             <div className="">
                 <p>{t('form.tags_title')}:</p>
                 <div
-                    className='bg-slate-100 whitespace-pre-wrap w-full my-2 text-sm font-normal font-sans leading-normal p-3 rounded-xl shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border'
+                    className={`bg-slate-100 whitespace-pre-wrap w-full my-2 ${text.length < 100 ? 'text-2xl' : 'text-lg'} font-normal font-sans leading-normal p-3 rounded-xl shadow-lg shadow-slate-100 dark:shadow-slate-900 focus:shadow-outline-purple dark:focus:shadow-outline-purple focus:shadow-lg border border-solid border-slate-300 hover:border-purple-500 dark:hover:border-purple-500 focus:border-purple-500 dark:focus:border-purple-500 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-300 focus-visible:outline-0 box-border`}
                 >
                     {tags.map((tag, i) => 
                         tag[1] === 'SPACE' ? tag[0]:
