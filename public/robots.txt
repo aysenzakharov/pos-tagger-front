@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /welcome
+Sitemap: https://part-of-speech-tool.info/sitemap.xml

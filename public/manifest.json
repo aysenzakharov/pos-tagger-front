@@ -1,6 +1,7 @@
 {
   "short_name": "POS Identifier",
-  "name": "Part of Speech Identifier",
+  "name": "Part of Speech Identifier – Instant POS Tagger for 7 Languages",
+  "description": "Quick analysis of sentences in English, German, French, Spanish, Russian, Chinese, and Japanese. Instantly identifies parts of speech in any text.",
   "icons": [
     {
       "src": "favicon.ico",

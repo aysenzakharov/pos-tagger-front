@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://part-of-speech-tool.info/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://part-of-speech-tool.info/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://part-of-speech-tool.info/?hl=en" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://part-of-speech-tool.info/?hl=ru" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://part-of-speech-tool.info/?hl=de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://part-of-speech-tool.info/?hl=fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://part-of-speech-tool.info/?hl=es" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://part-of-speech-tool.info/?hl=zh" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://part-of-speech-tool.info/?hl=ja" />
+  </url>
+
+</urlset>

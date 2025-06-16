@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWG78SZY3F"></script>
@@ -20,6 +20,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000" />
     <meta
       name="Part of Speech Identifier"
@@ -43,6 +44,50 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <link rel="canonical" href="https://part-of-speech-tool.info/"> 
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://part-of-speech-tool.info/">
+    <meta property="og:title" content="Part of Speech Identifier – Instant POS Tagger for 7 Languages">
+    <meta property="og:description" content="Quick analysis of sentences in English, German, French, Spanish, Russian, Chinese, and Japanese. Instantly identifies parts of speech in any text.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/4reiL0EnCRa9X0eXQufl8zG_UttQz9716-W1mg4o-83Rr6Z7fMJ14HuCG3FYTwpNCeDkY_TJ5NTBP63PNZ7-o9isAA=s800-w800-h500">
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://part-of-speech-tool.info/">
+    <meta name="twitter:title" content="Part of Speech Identifier – Instant POS Tagger for 7 Languages">
+    <meta name="twitter:description" content="Quick analysis of sentences in English, German, French, Spanish, Russian, Chinese, and Japanese. Instantly identifies parts of speech in any text.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/4reiL0EnCRa9X0eXQufl8zG_UttQz9716-W1mg4o-83Rr6Z7fMJ14HuCG3FYTwpNCeDkY_TJ5NTBP63PNZ7-o9isAA=s800-w800-h500">
+
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=en" hreflang="en">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=ru" hreflang="ru">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=zh" hreflang="zh">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=es" hreflang="es">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=de" hreflang="de">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=fr" hreflang="fr">
+    <link rel="alternate" href="https://part-of-speech-tool.info/?hl=ja" hreflang="ja">
+    <link rel="alternate" href="https://part-of-speech-tool.info/" hreflang="x-default">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://part-of-speech-tool.info/",
+        "name": "Part of Speech Identifier",
+        "description": "Quick analysis of sentences in English, German, French, Spanish, Russian, Chinese, and Japanese. Instantly identifies parts of speech in any text.",
+        "inLanguage": ["en", "de", "fr", "es", "ru", "zh", "ja"]
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://part-of-speech-tool.info/?text={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
     <title>Part of Speech Identifier</title>
   </head>
   <body>
