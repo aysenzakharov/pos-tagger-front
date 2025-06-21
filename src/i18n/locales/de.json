@@ -35,6 +35,17 @@
         "instruction": "Nun kannst du die Erweiterung über das Kontextmenü verwenden. Markiere einen Textabschnitt, klicke mit der rechten Maustaste und wähle die Option {{context_menu_item}} aus.",
         "button_title": "Wortart-Identifikator"
       }
+    },
+    "donation": {
+      "snackbar": "Unterstütze das Tool ❤️ — schon $1 hilft!",
+      "details": "Details",
+      "description": "Hallo!\nWenn dir dieses Tool gefällt, kannst du es gerne unterstützen — jeder Betrag hilft.\nDas Hosting für die KI kostet $10,19 pro Monat, die Domain $7,04 pro Jahr.\nEtwa 249 Personen besuchen die Seite monatlich.\nSchon $1 macht einen Unterschied.",
+      "btc": "Bitcoin (BTC)",
+      "eth": "Ethereum (ETH)",
+      "ltc": "Litecoin (LTC)",
+      "copy": "Kopieren",
+      "copied": "Kopiert!",
+      "close": "Schließen"
     }
   }
 }

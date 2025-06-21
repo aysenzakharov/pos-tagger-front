@@ -35,6 +35,17 @@
         "instruction": "Vous pouvez maintenant utiliser l'extension depuis le menu contextuel. Pour analyser les parties du discours dans le texte, sélectionnez une portion, faites un clic droit et choisissez l'option {{context_menu_item}}.",
         "button_title": "Identificateur de parties du discours"
       }
+    },
+    "donation": {
+      "snackbar": "Soutenez l'outil ❤️ — même 1 $ aide !",
+      "details": "Détails",
+      "description": "Bonjour !\nSi vous trouvez cet outil utile, n'hésitez pas à le soutenir — chaque don compte.\nL'hébergement de l'IA coûte 10,19 $ par mois et le domaine 7,04 $ par an.\nEnviron 249 personnes visitent le site chaque mois.\nMême 1 $ fait la différence.",
+      "btc": "Bitcoin (BTC)",
+      "eth": "Ethereum (ETH)",
+      "ltc": "Litecoin (LTC)",
+      "copy": "Copier",
+      "copied": "Copié !",
+      "close": "Fermer"
     }
   }
 }

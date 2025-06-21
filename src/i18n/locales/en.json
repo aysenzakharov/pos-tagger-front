@@ -35,6 +35,17 @@
         "instruction": "You can now use the extension from the context menu. To analyze parts of speech in the text, highlight a portion, right-click, and select the {{context_menu_item}} option.",
         "button_title": "Part of Speech Identifier"
       }
+    },
+    "donation": {
+      "snackbar": "Support the tool ❤️ — Even $1 helps!",
+      "details": "Details",
+      "description": "Hi there!\nIf you find this tool useful, feel free to support it — any amount helps.\nAI hosting costs $10.19 per month, and the domain is $7.04 per year.\nAround 249 people visit the site each month.\nEven $1 makes a difference.",
+      "btc": "Bitcoin (BTC)",
+      "eth": "Ethereum (ETH)",
+      "ltc": "Litecoin (LTC)",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "close": "Close"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import POSTagger from '../POSTagger';
+import DonationPopup from '../DonationPopup'
 
 function Home() {
   const { t } = useTranslation()
@@ -8,6 +9,7 @@ function Home() {
       <h1 className='text-lg'>{t('title')}</h1>
       <br />
       <POSTagger/>
+      <DonationPopup/>
     </div>
   );
 }

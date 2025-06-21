@@ -35,6 +35,17 @@
         "instruction": "Ahora puedes usar la extensión desde el menú contextual. Para analizar las partes del habla en el texto, selecciona una parte, haz clic derecho y elige la opción {{context_menu_item}}.",
         "button_title": "Identificador de partes del habla"
       }
+    },
+    "donation": {
+      "snackbar": "¡Apoya la herramienta ❤️ — incluso $1 ayuda!",
+      "details": "Detalles",
+      "description": "¡Hola!\nSi encuentras útil esta herramienta, considera apoyarla — cualquier cantidad ayuda.\nEl hosting de IA cuesta $10.19 al mes y el dominio $7.04 al año.\nAlrededor de 249 personas visitan el sitio cada mes.\nIncluso $1 marca la diferencia.",
+      "btc": "Bitcoin (BTC)",
+      "eth": "Ethereum (ETH)",
+      "ltc": "Litecoin (LTC)",
+      "copy": "Copiar",
+      "copied": "¡Copiado!",
+      "close": "Cerrar"
     }
   }
 }
