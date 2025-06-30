@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
-const ONE_HOUR_SECONDS = 3600;
+const DO_NOT_DISTURB_SECONDS = 60 * 3;
+
+// Quick declaration of yandex metrika event handler
+declare global {
+  interface Window {
+    ym?: (counterId: number, action: string, ...args: any[]) => void;
+  }
+}
 
 export default function DonationSnackbar(): JSX.Element | null {
   const { t } = useTranslation();
@@ -16,6 +23,7 @@ export default function DonationSnackbar(): JSX.Element | null {
       setCopied(text);
       setTimeout(() => setCopied(null), 2000);
     });
+    if (window.ym) window.ym(98956790,'reachGoal','copied_crypto_address')
   };
 
   useEffect(() => {
@@ -35,7 +43,7 @@ export default function DonationSnackbar(): JSX.Element | null {
 
         sessionStart.current = null;
 
-        if (newTotal >= ONE_HOUR_SECONDS && !showSnackbar) {
+        if (newTotal >= DO_NOT_DISTURB_SECONDS && !showSnackbar) {
           setShowSnackbar(true);
         }
       }
@@ -55,7 +63,7 @@ export default function DonationSnackbar(): JSX.Element | null {
     window.addEventListener('beforeunload', endSession);
 
     const storedTime = parseFloat(localStorage.getItem(totalTimeKey) ?? '0');
-    if (storedTime >= ONE_HOUR_SECONDS) {
+    if (storedTime >= DO_NOT_DISTURB_SECONDS) {
       setShowSnackbar(true);
     }
 
@@ -65,6 +73,18 @@ export default function DonationSnackbar(): JSX.Element | null {
       window.removeEventListener('beforeunload', endSession);
     };
   }, [showSnackbar]);
+
+  useEffect(() => {
+    if (showSnackbar && window.ym) {
+      window.ym(98956790,'reachGoal','showed_donation_snackbar')
+    }
+  }, [showSnackbar])
+  
+  useEffect(() => {
+    if (showFullPopup && window.ym) {
+      window.ym(98956790,'reachGoal','viewed_donation_addresses')
+    }
+  }, [showFullPopup])
 
   if (!showSnackbar) return null;
 
